@@ -1,0 +1,5 @@
+filename = raw_input("Enter file name: ")
+openfile = open(filename, 'a+')
+writesomething = raw_input("Write Something: ")
+openfile.write("%s\n" % writesomething)
+openfile.close()

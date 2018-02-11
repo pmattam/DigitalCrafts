@@ -1,0 +1,26 @@
+algorithm1.py - 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+algorithm2.py - A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+algorithm3.py - Write a program in Python that prints out all lines of 99 Bottles of Beer all the way down to zero.
+
+Example: “99 Bottles of beer, take one down, pass it around, 98 bottles of beer on the wall”
+
+However, for numbers that are multiples of 7, replace beer with Miller
+
+And for numbers that are multiples of 5, replace beer with Lite beer
+
+Lastly, for numbers that are multiples of 7 and 5, replace beer with Miller Lite
+
+You are welcome to take creative liberty with the beer brands, or replace it with soft drinks.
+
+Bonus challenge for algorithm #3:
+Write a second version of your program that does the same thing, but without using any of the following keywords:
+
+- if
+
+- else

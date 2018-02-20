@@ -29,7 +29,7 @@ def caseConverter(stringVal, conversionType):
             if i == 0:
                 convertedStr = word
             else:
-                convertedStr = convertedStr + "-" + word
+                convertedStr = convertedStr + "_" + word
 
     return convertedStr
 

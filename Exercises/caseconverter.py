@@ -1,3 +1,17 @@
+# Write a function caseConvert that accepts two arguments. The first is a string, the second is type. 
+# If the type is "camelcase" then convert the string to 
+# camelcase (each word except the first is capitalized, no spaces). 
+# If type is "snakecase" then convert the string to 
+# snakecase (each word is separated by a _ and all lowercase). 
+# As a bonus, accept a string or an array. If it's an array, use .join and proceed accordingly.
+
+# def caseConvert(str, conversionType):
+
+#  //Your code here!!
+
+#  return convertedStr
+
+
 def caseConverter(stringVal, conversionType):
 
     # If the value passed to stringVal is a list of strings
@@ -9,7 +23,6 @@ def caseConverter(stringVal, conversionType):
 
     if stringVal == "" or conversionType == "":
         return "Either user given string or case or both empty"
-
 
     stringVal = stringVal.lower()
     conversionType = conversionType.lower()

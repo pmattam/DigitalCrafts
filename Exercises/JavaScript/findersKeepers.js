@@ -21,6 +21,14 @@ var findElement = function(arr, fn) {
     return false;
 };
 
+// using Array.prototype.find()
+var findElement = function(arr, fn) {
+    var a = arr.find(function(val) { // arr.find() - returns the value for which the condition is true
+        return fn(val);   // should be condition which returns true or false, won't loop through as soon as the condition is true
+    });
+   return a !== undefined ? a :  false;
+};
+
 console.log(findElement([1,3,5,8,9,10], function(num) {
     return num % 2 === 0;
 }));

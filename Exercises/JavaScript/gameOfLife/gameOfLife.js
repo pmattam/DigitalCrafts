@@ -1,18 +1,38 @@
+// Conway's Game of Life!
+// Game of Life is a deceptively simple description of a 2-dimensional simulation, 
+// where each cell can either live or die depending on how many neighbors are alive or dead.
+
+// Write a function, nextGeneration(), which takes in the current generation 
+// (perhaps represented as a list of lists) and calculates the next generation based on the rules.
+
+// Make sure your program works for some of the example patterns, 
+// such as 2 "still life" patterns and 2 "oscillators".
+
 var x = document.querySelector(".row-display");
-// var day1 = [[false, false, false],
-//             [true, true, true],
-//             [false, false, false]];
+// var day1 = [[false, false, false, false],
+//             [false, true, true, false],
+//             [false, true, true, false],
+//             [false, false, false, false]];
 
-var day1 = [[false, false, false, false, false, false],
-            [false, false, false, false, false, false],
-            [false, false, true, true, true, false],
-            [false, true, true, true, false, false],
-            [false, false, false, false, false, false],
-            [false, false, false, false, false, false]];
+// var day1 = [[false, false, false, false, false],
+//             [false, false, true, false, false],
+//             [false, true, false, true, false],
+//             [false, false, true, false, false],
+//             [false, false, false, false, false]];
 
-var getDay2 = function() {
+var day1 = [[false, false, false],
+            [true, true, true],
+            [false, false, false]];
+
+// var day1 = [[false, false, false, false, false, false],
+//             [false, false, false, false, false, false],
+//             [false, false, true, true, true, false],
+//             [false, true, true, true, false, false],
+//             [false, false, false, false, false, false],
+//             [false, false, false, false, false, false]];
+
+var nextGeneration = function() {
     var day2 = [];
-    //console.log(day1.length);
     for(var i=0; i<day1.length; i++) {
         var sublist = [];
         for(var j=0; j<day1[i].length; j++) {
@@ -103,17 +123,16 @@ var displayGrid = function(day) {
         x.appendChild(p);
         removeList.push(p);
     });
-    
     setTimeout(function() 
     {removeList.forEach(function(value) {
         x.removeChild(value);
     });
-    }, 2000);
+    }, 1000);
 };
 
 var gameOfLife = function () {
     displayGrid(day1);
-    day1 = getDay2(day1);
+    day1 = nextGeneration(day1);
 }
 
 setInterval(gameOfLife, 2000);

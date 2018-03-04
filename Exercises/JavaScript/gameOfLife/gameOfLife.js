@@ -20,16 +20,16 @@ var x = document.querySelector(".row-display");
 //             [false, false, true, false, false],
 //             [false, false, false, false, false]];
 
-var day1 = [[false, false, false],
-            [true, true, true],
-            [false, false, false]];
+// var day1 = [[false, false, false],
+//             [true, true, true],
+//             [false, false, false]];
 
-// var day1 = [[false, false, false, false, false, false],
-//             [false, false, false, false, false, false],
-//             [false, false, true, true, true, false],
-//             [false, true, true, true, false, false],
-//             [false, false, false, false, false, false],
-//             [false, false, false, false, false, false]];
+var day1 = [[false, false, false, false, false, false],
+            [false, false, false, false, false, false],
+            [false, false, true, true, true, false],
+            [false, true, true, true, false, false],
+            [false, false, false, false, false, false],
+            [false, false, false, false, false, false]];
 
 var nextGeneration = function() {
     var day2 = [];
@@ -80,7 +80,7 @@ var aliveOrDead = function(cell, neighbors) {
     var i = cell[0];
     var j = cell[1];
     var count = countNeighborLives(neighbors);
-    if(day1[i][j] === true){
+    if(day1[i][j]){
         if(count < 2 || count > 3) {
             return false;
         }
@@ -99,7 +99,7 @@ var aliveOrDead = function(cell, neighbors) {
 var countNeighborLives = function(neighbors) {
     var count = 0;
     for (var k=0; k<neighbors.length; k++) {
-        if(day1[neighbors[k][0]][neighbors[k][1]] === true) {
+        if(day1[neighbors[k][0]][neighbors[k][1]]) {
             count++;    
         }
     }
@@ -124,9 +124,10 @@ var displayGrid = function(day) {
         removeList.push(p);
     });
     setTimeout(function() 
-    {removeList.forEach(function(value) {
+    {
+        removeList.forEach(function(value) {
         x.removeChild(value);
-    });
+        });
     }, 1000);
 };
 
